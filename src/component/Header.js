@@ -1,5 +1,3 @@
-import Nav from "./Nav";
-
 import logo from "../images/Logo.svg";
 
 const Header = () => {
@@ -8,7 +6,6 @@ const Header = () => {
       <header>
         <img src={logo} alt="logo" />
       </header>
-      <Nav />
     </>
   );
 };

@@ -1,0 +1,73 @@
+body {
+  font-family: "Karla", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Markazi", serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 400px 600px 400px 400px 300px;
+  grid-template-areas:
+    "header-nav"
+    "reservation"
+    "specials"
+    "ratings"
+    "about"
+    "footer";
+  /* justify-items: center; */
+  /* align-items: center; */
+  /* margin: 0 200px; */
+}
+
+.header-nav {
+  grid-area: header-nav;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservation {
+  grid-area: reservation;
+  background-color: #495e57;
+  color: #edefee;
+}
+
+.specials {
+  grid-area: specials;
+  color: #333333;
+}
+
+.ratings {
+  grid-area: ratings;
+  background-color: #fbdabb;
+  color: #333333;
+}
+
+.about {
+  grid-area: about;
+  color: #333333;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #333333;
+  color: #edefee;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  padding-right: 2em;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none !important;
+}
