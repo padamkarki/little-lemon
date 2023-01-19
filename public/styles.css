@@ -22,7 +22,8 @@ h3 {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100px 400px 600px 400px 400px 300px;
+  /* grid-template-rows: 100px 400px 600px 400px 400px 300px; */
+  grid-template-rows: 1fr 5fr 6fr 6fr 6fr 4fr;
   grid-template-areas:
     "header-nav"
     "reservation"
@@ -30,9 +31,16 @@ h3 {
     "ratings"
     "about"
     "footer";
+  grid-auto-flow: column;
   /* justify-items: center; */
   /* align-items: center; */
   /* margin: 0 200px; */
+}
+@media (max-width: 700px) {
+  .grid-container {
+    display: grid;
+    grid-auto-flow: row;
+  }
 }
 
 .header-nav {
@@ -40,6 +48,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1em;
 }
 
 .reservation {
