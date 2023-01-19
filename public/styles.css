@@ -7,6 +7,18 @@ h2 {
   font-family: "Markazi", serif;
 }
 
+h1 {
+  font-size: medium 64pt;
+}
+
+h2 {
+  font-size: 40pt;
+}
+
+h3 {
+  font-size: medium 18pt;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -70,4 +82,5 @@ nav ul li {
 
 a {
   text-decoration: none !important;
+  color: #495e57;
 }
