@@ -8,15 +8,22 @@ h2 {
 }
 
 h1 {
-  font-size: medium 64pt;
+  font-size: 64pt;
+  font-weight: medium;
+  margin: 0;
 }
 
 h2 {
   font-size: 40pt;
+  font-weight: medium;
+  margin: 0;
 }
 
 h3 {
-  font-size: medium 18pt;
+  font-family: "Karla", sans-serif;
+  font-size: 18pt;
+  font-weight: 400;
+  margin: 0;
 }
 
 .grid-container {

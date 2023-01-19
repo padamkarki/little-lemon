@@ -1,34 +1,14 @@
-import Header from "./Component/Header";
-import Nav from "./Component/Nav";
-import Reservation from "./Component/Reservation";
-import Specials from "./Component/Specials";
-import Ratings from "./Component/Ratings";
-import About from "./Component/About";
-import Footer from "./Component/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="grid-container">
-      <div className="header-nav">
-        <Header />
-        <Nav />
-      </div>
-      <div className="reservation">
-        <Reservation />
-      </div>
-      <div className="specials">
-        <Specials />
-      </div>
-      <div className="ratings">
-        <Ratings />
-      </div>
-      <div className="about">
-        <About />
-      </div>
-      <div className="footer">
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
