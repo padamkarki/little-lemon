@@ -12,7 +12,7 @@
   padding: 0em 2em;
   cursor: pointer;
   white-space: nowrap;
-  height: 80px;
+  height: 70px;
 }
 
 .flex {
@@ -20,6 +20,14 @@
   flex-direction: row;
   justify-content: space-between; /* This will align the items vertically */
   margin: 0em 0em;
+}
+
+.cardflex {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* This will align the items vertically */
+  gap: 2em;
 }
 
 @media (max-width: 700px) {

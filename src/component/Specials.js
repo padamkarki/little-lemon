@@ -10,7 +10,11 @@ const Specials = () => {
             <h1>This Weeks Specials!</h1>
             <button className={styles.button}>Online Menu</button>
           </div>
-          <FoodItem />
+          <div className={styles.cardflex}>
+            <FoodItem />
+            <FoodItem />
+            <FoodItem />
+          </div>
         </div>
       </section>
     </>

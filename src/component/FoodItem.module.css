@@ -4,3 +4,30 @@
   height: 50%;
   border-radius: 16px;
 }
+
+.details {
+  margin: 0 1em;
+  font-size: 16pt;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* This will align the items vertically */
+  margin: 1em 0em;
+}
+
+.foodtitle {
+  font-weight: 600;
+}
+
+.price {
+  font-weight: 600;
+  color: #ee9972;
+}
+.order_btn {
+  font-size: 16pt;
+  border-style: none;
+  cursor: pointer;
+  margin-bottom: 1em;
+}

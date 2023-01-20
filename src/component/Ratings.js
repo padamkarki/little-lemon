@@ -1,8 +1,19 @@
+import RatingCards from "./RatingCard";
+import styles from "./Ratings.module.css";
+
 const Ratings = () => {
   return (
     <>
-      <section>
-        <p>Ratings</p>
+      <section className={styles.section}>
+        <div className={styles.align}>
+          <h2 className={styles.center}>Testimonials</h2>
+          <div className={styles.cardflex}>
+            <RatingCards />
+            <RatingCards />
+            <RatingCards />
+            <RatingCards />
+          </div>
+        </div>
       </section>
     </>
   );
