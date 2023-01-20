@@ -1,17 +1,28 @@
 import styles from "./Reservation.module.css";
+import foodimg from "../images/restauranfood.jpg";
 
 const Reservation = () => {
   return (
     <>
       <section className={styles.section}>
-        <h1 className={styles.title}>Little Lemon</h1>
-        <h2>Chicago</h2>
-        <h3>
-          Join us at for a dining experience you won't forget! Enjoy our
-          delicious menu and cozy atmosphere while reserving your table today.
-          Indulge in our unique flavors and impeccable service. Discover the
-          best of Chicago's dining scene at Little Lemon.
-        </h3>
+        <div className={styles.flex}>
+          <div className={styles.left}>
+            <h1 className={styles.title}>Little Lemon</h1>
+            <h2>Chicago</h2>
+            <h3>
+              Join us at for a dining experience you won't forget! Enjoy our
+              delicious menu and cozy atmosphere while reserving your table
+              today. Indulge in our unique flavors and impeccable service.
+            </h3>
+            <br />
+            <button className={styles.button}>
+              <h3>Reserve a Table</h3>
+            </button>
+          </div>
+          <div className={styles.right}>
+            <img className={styles.img} src={foodimg} alt="foodImage"></img>
+          </div>
+        </div>
       </section>
     </>
   );
