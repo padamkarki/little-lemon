@@ -1,7 +1,12 @@
-const Card = () => {
+import greeksalad from "../images/greek salad.jpg";
+
+import Card from "./UI/Card";
+import styles from "./FoodItem.module.css";
+
+const FoodItem = () => {
   return (
-    <div>
-      <img src="" alt="" />
+    <Card>
+      <img className={styles.img} src={greeksalad} alt="greek salad" />
       <div>
         <div>
           <h3>Greek Salad</h3>
@@ -14,8 +19,8 @@ const Card = () => {
         </p>
         <button>Order a delivery</button>
       </div>
-    </div>
+    </Card>
   );
 };
 
-export default Card;
+export default FoodItem;

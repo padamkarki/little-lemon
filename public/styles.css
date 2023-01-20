@@ -30,7 +30,7 @@ h3 {
   display: grid;
   grid-template-columns: 1fr;
   /* grid-template-rows: 100px 400px 600px 400px 400px 300px; */
-  grid-template-rows: 1fr 5fr 6fr 6fr 6fr 4fr;
+  grid-template-rows: 1fr 4fr 6fr 6fr 6fr 4fr;
   grid-template-areas:
     "header-nav"
     "reservation"
