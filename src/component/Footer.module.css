@@ -1,0 +1,24 @@
+.section {
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 2%;
+}
+
+.footer_flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* This will align the items vertically */
+  margin: 0em 0em;
+}
+
+.img {
+  object-fit: cover;
+  width: 150px;
+  height: 250px;
+  object-position: 40% 100%;
+}
+
+.links {
+  list-style-type: none;
+  color: #ffffff;
+}

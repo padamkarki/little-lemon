@@ -4,7 +4,7 @@
 }
 .center {
   text-align: center;
-  margin-top: 1em;
+  margin-top: 2.5em;
   margin-bottom: 1em;
 }
 
@@ -16,8 +16,8 @@
 }
 
 .card_size {
-  width: 200px;
-  height: 200px;
+  width: 270px;
+  height: 220px;
   font-size: 16px;
 }
 
