@@ -20,5 +20,8 @@
 
 .links {
   list-style-type: none;
-  color: #ffffff;
+}
+
+footer ul li a {
+  color: #ffffff !important;
 }
