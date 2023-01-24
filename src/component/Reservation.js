@@ -1,6 +1,8 @@
 import styles from "./Reservation.module.css";
 import foodimg from "../images/restauranfood.jpg";
 
+import { Link } from "react-router-dom";
+
 const Reservation = () => {
   return (
     <>
@@ -15,9 +17,11 @@ const Reservation = () => {
               today. Indulge in our unique flavors and impeccable service.
             </h3>
             <br />
-            <button className={styles.button}>
-              <h3>Reserve a Table</h3>
-            </button>
+            <Link to="/bookingpage">
+              <button className={styles.button}>
+                <h3>Reserve a Table</h3>
+              </button>
+            </Link>
           </div>
           <div className={styles.right}>
             <img className={styles.img} src={foodimg} alt="foodImage"></img>
