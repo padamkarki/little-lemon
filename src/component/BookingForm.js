@@ -1,19 +1,14 @@
 import { useState } from "react";
 
-const BookingForm = (props) => {
+const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
-  const { availableTimes, dispatch } = props;
 
   const submitHnadler = (e) => {
     e.preventDefault();
-    console.log("date: ", date);
-    console.log("time: ", time);
-    console.log("guests: ", guests);
-    console.log("occasion: ", occasion);
-    console.log("availableTimes: ", availableTimes);
+    onSubmit({ date, time, guests, occasion });
   };
 
   return (
@@ -27,6 +22,7 @@ const BookingForm = (props) => {
           type="date"
           id="res-date"
           value={date}
+          data-testid="res-date"
           onChange={(e) => {
             setDate(e.target.value);
             dispatch({ type: "update", date: e.target.value });
@@ -38,10 +34,12 @@ const BookingForm = (props) => {
           id="res-time"
           value={time}
           onChange={(e) => setTime(e.target.value)}
+          data-testid="available-times"
         >
-          {availableTimes.map((time, index) => (
-            <option key={index}>{time}</option>
-          ))}
+          {availableTimes &&
+            availableTimes.map((time, index) => (
+              <option key={index}>{time}</option>
+            ))}
         </select>
 
         <label htmlFor="guests">Number of guests</label>
@@ -51,6 +49,7 @@ const BookingForm = (props) => {
           min="1"
           max="10"
           id="guests"
+          data-testid="guests"
           value={guests}
           onChange={(e) => setGuests(e.target.value)}
         />
@@ -59,6 +58,7 @@ const BookingForm = (props) => {
         <select
           id="occasion"
           value={occasion}
+          data-testid="occasion"
           onChange={(e) => setOccasion(e.target.value)}
         >
           <option>Birthday</option>
