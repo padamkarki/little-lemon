@@ -1,18 +1,17 @@
 import BookingForm from "../component/BookingForm";
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 import { fetchAPI, submitAPI } from "../component/fetch_api";
+import { useNavigate } from "react-router-dom";
 
 export const initializeTimes = () => {
   const today = new Date();
 
   return fetchAPI(today);
-  // return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 };
 
 export const updateTimes = (state, action) => {
   if (action.type === "update") {
     // logic to update available times based on date
-    // for now, returning the same times
     let selectedDate = action.date;
     if (!(selectedDate instanceof Date)) {
       selectedDate = new Date(selectedDate);
@@ -22,29 +21,34 @@ export const updateTimes = (state, action) => {
       return state;
     }
     return fetchAPI(selectedDate);
-    // return fetchAPI(action.date);
-    // ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
   }
   return state;
 };
 
 const BookingPage = () => {
-  const submitHandler = (data) => {
-    const result = submitAPI(data);
+  const navigate = useNavigate();
+  const submitForm = (formData) => {
+    const result = submitAPI(formData);
     if (result) {
-      console.log("Form Submitted Successfully");
+      navigate("/booking-confirmed");
+      console.log("Form Submitted");
     } else {
       console.log("Form Submission Failed");
     }
-    // console.log("Form Submitted", data);
+    console.log(formData);
   };
 
   const initialState = initializeTimes();
   const [availableTimes, dispatch] = useReducer(updateTimes, initialState);
 
+  useEffect(() => {
+    const today = new Date();
+    dispatch({ type: "update", date: today });
+  }, []);
+
   return (
     <BookingForm
-      onSubmit={submitHandler}
+      onSubmit={submitForm}
       availableTimes={availableTimes}
       dispatch={dispatch}
     />
