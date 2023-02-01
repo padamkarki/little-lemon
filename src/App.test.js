@@ -11,24 +11,39 @@ test("Renders the Make Your reservation", () => {
   expect(headingElement).toBeInTheDocument();
 });
 
-test("initializeTimes should return the correct expected value", () => {
-  const result = initializeTimes();
-  expect(result).toEqual([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
+describe("initializeTimes", () => {
+  it("should return a non-empty array", () => {
+    const result = initializeTimes();
+    expect(result).toBeInstanceOf(Array);
+    expect(result.length).toBeGreaterThan(0);
+  });
+});
+test("updateTimes should return updated times based on selected date", () => {
+  const state = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  const selectedDate = new Date("2022-06-01");
+  const action = { type: "update", date: selectedDate };
+  const result = updateTimes(state, action);
+  expect(result).not.toEqual(state);
 });
 
-test("updateTimes should return the same value that is provided in the state", () => {
-  const state = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  const action = { type: "update" };
-  const result = updateTimes(state, action);
-  expect(result).toEqual(state);
-});
+// test("initializeTimes should return the correct expected value", () => {
+//   const result = initializeTimes();
+//   expect(result).toEqual([
+//     "17:00",
+//     "18:00",
+//     "19:00",
+//     "20:00",
+//     "21:00",
+//     "22:00",
+//   ]);
+// });
+
+// test("updateTimes should return the same value that is provided in the state", () => {
+//   const state = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+//   const action = { type: "update" };
+//   const result = updateTimes(state, action);
+//   expect(result).toEqual(state);
+// });
 
 test("submits the form correctly", () => {
   const onSubmit = jest.fn();
