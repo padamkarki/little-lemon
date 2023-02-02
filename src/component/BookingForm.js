@@ -1,14 +1,37 @@
 import { useState } from "react";
 
 const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validateDate = () => {
+    const newErrors = { ...errors };
+    if (new Date(date).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0)) {
+      newErrors.date = "Date cannot be in the past";
+    } else {
+      delete newErrors.date;
+    }
+    setErrors(newErrors);
+  };
+
+  const validateGuests = () => {
+    const newErrors = { ...errors };
+    if (!guests || guests < 1 || guests > 10) {
+      newErrors.guests = "Number of guests must be between 1 and 10";
+    } else {
+      delete newErrors.guests;
+    }
+    setErrors(newErrors);
+  };
 
   const submitHnadler = (e) => {
     e.preventDefault();
-    onSubmit({ date, time, guests, occasion });
+    if (Object.keys(errors).length === 0) {
+      onSubmit({ date, time, guests, occasion });
+    }
   };
 
   return (
@@ -27,7 +50,9 @@ const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
             setDate(e.target.value);
             dispatch({ type: "update", date: e.target.value });
           }}
+          onBlur={validateDate}
         />
+        {errors.date && <div style={{ color: "red" }}>{errors.date}</div>}
 
         <label htmlFor="res-time">Choose time</label>
         <select
@@ -52,7 +77,9 @@ const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
           data-testid="guests"
           value={guests}
           onChange={(e) => setGuests(e.target.value)}
+          onBlur={validateGuests}
         />
+        {errors.guests && <div style={{ color: "red" }}>{errors.guests}</div>}
 
         <label htmlFor="occasion">Occasion</label>
         <select
@@ -65,7 +92,11 @@ const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
           <option>Anniversary</option>
         </select>
 
-        <input type="submit" value="Make Your reservation" />
+        <input
+          disabled={Object.keys(errors).length > 0}
+          type="submit"
+          value="Make Your reservation"
+        />
       </form>
     </>
   );
