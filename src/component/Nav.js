@@ -5,22 +5,34 @@ const Nav = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link aria-label="Go to home page" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link aria-label="Go to About page" to="/about">
+            About
+          </Link>
         </li>
         <li>
-          <Link to="/menu">Menu</Link>
+          <Link aria-label="Go to menu page" to="/menu">
+            Menu
+          </Link>
         </li>
         <li>
-          <Link to="/bookingpage">Reservation</Link>
+          <Link aria-label="Go to booking page" to="/bookingpage">
+            Reservation
+          </Link>
         </li>
         <li>
-          <Link to="/order">Order Online</Link>
+          <Link aria-label="Go to order page" to="/order">
+            Order Online
+          </Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link aria-label="Go to login page" to="/login">
+            Login
+          </Link>
         </li>
       </ul>
     </nav>

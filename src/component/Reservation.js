@@ -10,15 +10,15 @@ const Reservation = () => {
         <div className={styles.flex}>
           <div className={styles.left}>
             <h1 className={styles.title}>Little Lemon</h1>
-            <h2>Chicago</h2>
-            <h3>
+            <h2 className={styles.subtitle}>Chicago</h2>
+            <p className={styles.desc}>
               Join us at for a dining experience you won't forget! Enjoy our
               delicious menu and cozy atmosphere while reserving your table
-              today. Indulge in our unique flavors and impeccable service.
-            </h3>
+              today.
+            </p>
             <br />
             <Link to="/bookingpage">
-              <button className={styles.button}>
+              <button aria-label="Go to booking page" className={styles.button}>
                 <h3>Reserve a Table</h3>
               </button>
             </Link>

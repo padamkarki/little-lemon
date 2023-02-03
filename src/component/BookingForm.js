@@ -1,10 +1,14 @@
 import { useState } from "react";
 
 const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
-  const [time, setTime] = useState("");
+  const defaultTime =
+    availableTimes && availableTimes.length > 0 ? availableTimes[0] : "";
+  const defaultDate = new Date().toISOString().split("T")[0];
+
+  const [date, setDate] = useState(defaultDate);
+  const [time, setTime] = useState(defaultTime);
   const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState("");
+  const [occasion, setOccasion] = useState("Birthday");
   const [errors, setErrors] = useState({});
 
   const validateDate = () => {
@@ -92,11 +96,13 @@ const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
           <option>Anniversary</option>
         </select>
 
-        <input
+        <button
+          aria-label="Submit Form"
           disabled={Object.keys(errors).length > 0}
           type="submit"
-          value="Make Your reservation"
-        />
+        >
+          Make Your reservation
+        </button>
       </form>
     </>
   );

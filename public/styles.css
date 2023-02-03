@@ -4,7 +4,7 @@ body {
 
 h1,
 h2 {
-  font-family: "Markazi", serif;
+  font-family: "Markazi";
 }
 
 h1 {
@@ -34,14 +34,12 @@ h4 {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 3fr 4.8fr 4fr 3.5fr 2fr;
+  grid-template-rows: 3fr 4.8fr 4fr 3.5fr;
   grid-template-areas:
-    "header-nav"
     "reservation"
     "specials"
     "ratings"
-    "about"
-    "footer";
+    "about";
   grid-auto-flow: column;
 }
 
@@ -52,13 +50,13 @@ h4 {
   }
 }
 
-.header-nav {
+/* .header-nav {
   grid-area: header-nav;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1em;
-}
+} */
 
 .reservation {
   grid-area: reservation;
@@ -82,11 +80,11 @@ h4 {
   color: #333333;
 }
 
-.footer {
+/* .footer {
   grid-area: footer;
   background-color: #333333;
   color: #edefee;
-}
+} */
 
 nav ul {
   list-style-type: none;
@@ -94,8 +92,18 @@ nav ul {
 }
 
 nav ul li {
-  padding-right: 2em;
-  font-weight: 600;
+  justify-content: space-between;
+  padding-right: 3.5em;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul li:first-child {
+  padding-left: 2em;
+}
+
+nav ul li:last-child {
+  padding-right: 0;
 }
 
 a {

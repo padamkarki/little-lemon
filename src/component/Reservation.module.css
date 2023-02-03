@@ -12,7 +12,7 @@
 
 .left {
   align-self: flex-start;
-  margin: 0em 2em 1em 0;
+  margin: 0em 6em 1em 0;
 }
 
 .right {
@@ -23,6 +23,16 @@
 .title {
   margin: 60px 0px 10px 0px;
   color: #f4ce14;
+}
+
+.subtitle {
+  margin-bottom: 0.5em;
+}
+.desc {
+  font-family: "Karla", sans-serif;
+  font-size: 18pt;
+  font-weight: 400;
+  margin-bottom: 1em;
 }
 
 .button {
@@ -36,11 +46,12 @@
 }
 
 .img {
-  width: 400px;
+  width: 450px;
   height: 500px;
   border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transform: translateY(50px);
+  transform: translateY(60px);
+  object-fit: cover;
 }
 
 @media (max-width: 700px) {
