@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./BookingForm.module.css";
 
 const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
   const defaultTime =
@@ -40,70 +41,115 @@ const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
 
   return (
     <>
-      <form
-        style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
-        onSubmit={submitHnadler}
-      >
-        <label htmlFor="res-date">Choose date</label>
-        <input
-          type="date"
-          id="res-date"
-          value={date}
-          data-testid="res-date"
-          onChange={(e) => {
-            setDate(e.target.value);
-            dispatch({ type: "update", date: e.target.value });
-          }}
-          onBlur={validateDate}
-        />
-        {errors.date && <div style={{ color: "red" }}>{errors.date}</div>}
+      <div className={styles.intro}>
+        <div className={styles.textalign}>
+          <h2 className={styles.heading}>Find your table for any occasion</h2>
+          <p>
+            Reserve a table at our restaurant for a memorable dining experience.
+            Enjoy great views and atmosphere. Book your table now via phone or
+            website.Savor our delicious cuisine crafted by our expert chefs
+            using only the freshest ingredients. Indulge in a dining experience
+            like no other and create lasting memories with your loved ones.
+          </p>
+        </div>
+      </div>
+      <div className={styles.section}>
+        <form onSubmit={submitHnadler} className={styles.form_container}>
+          <label className={styles.col_25} htmlFor="res-date">
+            Choose date:{" "}
+          </label>
+          <input
+            className={styles.col_75}
+            type="date"
+            id="res-date"
+            value={date}
+            data-testid="res-date"
+            onChange={(e) => {
+              setDate(e.target.value);
+              dispatch({ type: "update", date: e.target.value });
+            }}
+            onBlur={validateDate}
+          />
+          {errors.date && (
+            <div
+              style={{
+                color: "red",
+                float: "right",
+                width: "60%",
+                paddingLeft: "40%",
+              }}
+            >
+              {errors.date}
+            </div>
+          )}
 
-        <label htmlFor="res-time">Choose time</label>
-        <select
-          id="res-time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-          data-testid="available-times"
-        >
-          {availableTimes &&
-            availableTimes.map((time, index) => (
-              <option key={index}>{time}</option>
-            ))}
-        </select>
+          <label className={styles.col_25} htmlFor="res-time">
+            Choose time:
+          </label>
+          <select
+            className={styles.col_75}
+            id="res-time"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            data-testid="available-times"
+          >
+            {availableTimes &&
+              availableTimes.map((time, index) => (
+                <option key={index}>{time}</option>
+              ))}
+          </select>
 
-        <label htmlFor="guests">Number of guests</label>
-        <input
-          type="number"
-          placeholder="1"
-          min="1"
-          max="10"
-          id="guests"
-          data-testid="guests"
-          value={guests}
-          onChange={(e) => setGuests(e.target.value)}
-          onBlur={validateGuests}
-        />
-        {errors.guests && <div style={{ color: "red" }}>{errors.guests}</div>}
+          <label className={styles.col_25} htmlFor="guests">
+            Number of guests:
+          </label>
+          <input
+            className={styles.col_75}
+            type="number"
+            placeholder="1"
+            min="1"
+            max="10"
+            id="guests"
+            data-testid="guests"
+            value={guests}
+            onChange={(e) => setGuests(e.target.value)}
+            onBlur={validateGuests}
+          />
+          {errors.guests && (
+            <div
+              style={{
+                color: "red",
+                float: "right",
+                width: "60%",
+                paddingLeft: "40%",
+              }}
+            >
+              {errors.guests}
+            </div>
+          )}
 
-        <label htmlFor="occasion">Occasion</label>
-        <select
-          id="occasion"
-          value={occasion}
-          data-testid="occasion"
-          onChange={(e) => setOccasion(e.target.value)}
-        >
-          <option>Birthday</option>
-          <option>Anniversary</option>
-        </select>
+          <label className={styles.col_25} htmlFor="occasion">
+            Occasion:
+          </label>
+          <select
+            className={styles.col_75}
+            id="occasion"
+            value={occasion}
+            data-testid="occasion"
+            onChange={(e) => setOccasion(e.target.value)}
+          >
+            <option>Birthday</option>
+            <option>Anniversary</option>
+          </select>
 
-        <button
-          aria-label="Submit Form"
-          disabled={Object.keys(errors).length > 0}
-          type="submit"
-        >
-          Make Your reservation
-        </button>
-      </form>
+          <button
+            aria-label="Submit Form"
+            disabled={Object.keys(errors).length > 0}
+            type="submit"
+          >
+            Make Your reservation
+          </button>
+        </form>
+      </div>
     </>
   );
 };

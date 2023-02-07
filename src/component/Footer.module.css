@@ -27,3 +27,17 @@
 footer ul li a {
   color: #ffffff !important;
 }
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  clear: both;
+}
+
+/* Clearfix hack */
+footer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
