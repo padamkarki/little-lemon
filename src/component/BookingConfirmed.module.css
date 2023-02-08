@@ -1,0 +1,21 @@
+.section {
+  padding: 2% 20% 10% 20%;
+}
+
+.heading {
+  text-align: center;
+  justify-content: center;
+  color: green;
+  padding-bottom: 0.5em;
+}
+
+.details {
+  font-size: 18pt;
+}
+p {
+  font-size: 18pt;
+}
+
+.details_data {
+  color: green;
+}

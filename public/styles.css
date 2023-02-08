@@ -43,20 +43,35 @@ h4 {
   grid-auto-flow: column;
 }
 
+/* Media queries--------------------------------------------------------------------------*/
+
 @media (max-width: 700px) {
   .grid-container {
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2.5fr 1fr 1fr;
+    grid-template-areas:
+      "reservation"
+      "specials"
+      "ratings"
+      "about";
     grid-auto-flow: row;
   }
 }
 
-/* .header-nav {
-  grid-area: header-nav;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1em;
-} */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "reservation"
+      "specials"
+      "ratings"
+      "about";
+    grid-auto-flow: row;
+  }
+}
 
 .reservation {
   grid-area: reservation;
@@ -79,12 +94,6 @@ h4 {
   grid-area: about;
   color: #333333;
 }
-
-/* .footer {
-  grid-area: footer;
-  background-color: #333333;
-  color: #edefee;
-} */
 
 nav ul {
   list-style-type: none;

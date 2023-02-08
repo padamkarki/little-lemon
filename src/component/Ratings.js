@@ -8,10 +8,10 @@ const Ratings = () => {
         <div className={styles.align}>
           <h2 className={styles.center}>Testimonials</h2>
           <div className={styles.cardflex}>
-            <RatingCards />
-            <RatingCards />
-            <RatingCards />
-            <RatingCards />
+            <RatingCards className={styles.card} />
+            <RatingCards className={styles.card} />
+            <RatingCards className={styles.card} />
+            <RatingCards className={styles.card} />
           </div>
         </div>
       </section>

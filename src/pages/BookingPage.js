@@ -1,5 +1,5 @@
 import BookingForm from "../component/BookingForm";
-import { useReducer, useEffect } from "react";
+import { useReducer, useState, useEffect } from "react";
 import { fetchAPI, submitAPI } from "../component/fetch_api";
 import { useNavigate } from "react-router-dom";
 
@@ -26,11 +26,13 @@ export const updateTimes = (state, action) => {
 };
 
 const BookingPage = () => {
+  const [formData, setFormData] = useState({});
   const navigate = useNavigate();
-  const submitForm = (formData) => {
-    const result = submitAPI(formData);
+  const submitForm = (data) => {
+    const result = submitAPI(data);
     if (result) {
-      navigate("/booking-confirmed");
+      setFormData(data);
+      navigate("/booking-confirmed", { state: { formData: data } });
       console.log("Form Submitted");
     } else {
       console.log("Form Submission Failed");

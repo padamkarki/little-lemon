@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./BookingForm.module.css";
+import BookingHeading from "./BookingHeading";
 
 const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
   const defaultTime =
@@ -41,18 +42,7 @@ const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
 
   return (
     <>
-      <div className={styles.intro}>
-        <div className={styles.textalign}>
-          <h2 className={styles.heading}>Find your table for any occasion</h2>
-          <p>
-            Reserve a table at our restaurant for a memorable dining experience.
-            Enjoy great views and atmosphere. Book your table now via phone or
-            website.Savor our delicious cuisine crafted by our expert chefs
-            using only the freshest ingredients. Indulge in a dining experience
-            like no other and create lasting memories with your loved ones.
-          </p>
-        </div>
-      </div>
+      <BookingHeading />
       <div className={styles.section}>
         <form onSubmit={submitHnadler} className={styles.form_container}>
           <label className={styles.col_25} htmlFor="res-date">
@@ -139,6 +129,7 @@ const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
           >
             <option>Birthday</option>
             <option>Anniversary</option>
+            <option>Other</option>
           </select>
 
           <button

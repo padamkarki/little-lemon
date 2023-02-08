@@ -1,7 +1,11 @@
-import ConfirmedBooking from "../component/ConfirmedBooking";
+import BookingConfirmed from "../component/BookingConfirmed";
 
 const BookingConfirmation = () => {
-  return <ConfirmedBooking />;
+  return (
+    <>
+      <BookingConfirmed />
+    </>
+  );
 };
 
 export default BookingConfirmation;
