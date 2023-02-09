@@ -17,5 +17,9 @@ p {
 }
 
 .details_data {
-  color: green;
+  font-weight: 900;
+  color: rgb(0, 73, 0);
+}
+.booking_detail {
+  font-weight: 600;
 }

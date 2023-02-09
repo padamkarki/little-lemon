@@ -15,10 +15,23 @@ const BookingConfirmed = () => {
             <span> Your reservation details are as follows:</span>
           </p>
           <div className={styles.details_data}>
-            <h3>Date: {formData.date}</h3>
-            <h3>Time: {formData.time}</h3>
-            <h3> Number of Guests: {formData.guests}</h3>
-            <h3>Occasion: {formData.occasion}</h3>
+            <h3>
+              Date:{" "}
+              <span className={styles.booking_detail}>{formData.date}</span>
+            </h3>
+            <h3>
+              Time:{" "}
+              <span className={styles.booking_detail}>{formData.time}</span>
+            </h3>
+            <h3>
+              {" "}
+              Number of Guests:{" "}
+              <span className={styles.booking_detail}>{formData.guests}</span>
+            </h3>
+            <h3>
+              Occasion:{" "}
+              <span className={styles.booking_detail}>{formData.occasion}</span>
+            </h3>
           </div>
           <p>
             We are looking forward to welcoming you to our restaurant and

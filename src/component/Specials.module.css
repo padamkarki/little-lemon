@@ -13,12 +13,13 @@
   cursor: pointer;
   white-space: nowrap;
   height: 70px;
+  margin-left: 1em;
 }
 
 .flex {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* This will align the items vertically */
+  justify-content: space-evenly; /* This will align the items vertically */
   margin: 0em 0em;
 }
 
@@ -26,7 +27,7 @@
   margin-top: 2em;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* This will align the items vertically */
+  justify-content: space-evenly; /* This will align the items vertically */
   gap: 2em;
 }
 
@@ -37,11 +38,23 @@
     margin-right: 4%;
     margin-left: 4%;
   }
+  .button {
+    max-width: 100%;
+    font-family: "Karla", sans-serif;
+    font-size: 18pt;
+    background-color: #f4ce14;
+    border-radius: 8px;
+    border-style: none;
+    padding: 0em 1em;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 8vh;
+  }
 
   .flex {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* This will align the items vertically */
+    justify-content: space-evenly; /* This will align the items vertically */
     margin: 0em 0em;
   }
 

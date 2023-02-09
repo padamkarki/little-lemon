@@ -30,6 +30,8 @@
   border-style: none;
   cursor: pointer;
   margin-bottom: 1em;
+  float: none !important;
+  width: 100%;
 }
 
 /* Media queries--------------------------------------------------------------------------*/
