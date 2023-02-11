@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import navbar from "../images/bars-solid.svg";
 import Xmark from "../images/xmark.svg";
+import NavLinks from "./NavLinks";
 
 const Nav = () => {
   const [isNavOpen, setNavOpen] = useState(false);
@@ -75,6 +76,7 @@ const Nav = () => {
           </ul>
         </div>
       )}
+      <NavLinks />
     </nav>
   );
 };
