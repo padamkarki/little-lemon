@@ -15,14 +15,13 @@ const Footer = () => {
                 alt="restaurant_img"
               />
             </div>
-            <div>
-              <h3>
-                DOORMAT
-                <br />
-                NAVIGATION
-              </h3>
+            <div className={styles.footer_text}>
+              <div>
+                <h3>DOORMAT</h3>
+                <h3>NAVIGATION</h3>
+              </div>
               <ul>
-                <li className={styles.links}>
+                <li>
                   <a href="/#">Home</a> <br />
                   <a href="/#">About</a> <br />
                   <a href="/#">Menu</a> <br />
@@ -32,10 +31,10 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className={styles.footer_text}>
               <h3>CONTACTS</h3>
               <ul>
-                <li className={styles.links}>
+                <li>
                   <a href="/#">Addrses</a>
                   <br />
                   <a href="/#">Phone Number</a>
@@ -47,7 +46,7 @@ const Footer = () => {
             <div>
               <h3>SOCIAL MEDIA LINKS</h3>
               <ul>
-                <li className={styles.links}>
+                <li>
                   <a href="/#">Addrses</a>
                   <br />
                   <a href="/#">Phone Number</a>

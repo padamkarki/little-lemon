@@ -2,26 +2,20 @@ import Reservation from "../component/Reservation";
 import Specials from "../component/Specials";
 import Ratings from "../component/Ratings";
 import About from "../component/About";
-import { useRef } from "react";
 
 const Home = () => {
-  const reservationRef = useRef(null);
-  const specialsRef = useRef(null);
-  const ratingsRef = useRef(null);
-  const aboutRef = useRef(null);
-
   return (
     <div className="grid-container">
-      <div className="reservation" ref={reservationRef}>
+      <div className="reservation">
         <Reservation />
       </div>
-      <div className="specials" ref={specialsRef}>
+      <div className="specials">
         <Specials />
       </div>
-      <div className="ratings" ref={ratingsRef}>
+      <div className="ratings">
         <Ratings />
       </div>
-      <div className="about" ref={aboutRef}>
+      <div className="about">
         <About />
       </div>
     </div>

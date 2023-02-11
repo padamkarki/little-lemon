@@ -1,6 +1,5 @@
 import styles from "./Reservation.module.css";
 import foodimg from "../images/restauranfood.jpg";
-
 import { Link } from "react-router-dom";
 
 const Reservation = () => {

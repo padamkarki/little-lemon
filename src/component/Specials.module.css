@@ -40,6 +40,7 @@
   }
   .button {
     max-width: 100%;
+    width: 100%;
     font-family: "Karla", sans-serif;
     font-size: 18pt;
     background-color: #f4ce14;
@@ -49,11 +50,11 @@
     cursor: pointer;
     white-space: nowrap;
     height: 8vh;
+    margin: 1em 0;
   }
 
   .flex {
-    display: flex;
-    flex-direction: row;
+    display: block;
     justify-content: space-evenly; /* This will align the items vertically */
     margin: 0em 0em;
   }
