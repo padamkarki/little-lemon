@@ -8,7 +8,9 @@ const Layout = (props) => {
     <>
       <div className={styles.header_nav}>
         <Header />
-        <Nav />
+        <div className={styles.links_container}>
+          <Nav />
+        </div>
       </div>
       <main>{props.children}</main>
       <Footer />
