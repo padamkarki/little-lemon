@@ -1,10 +1,13 @@
 import logo from "../images/Logo.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
       <header>
-        <img src={logo} alt="logo" />
+        <Link aria-label="Go to home page" to="/">
+          <img src={logo} alt="logo" />
+        </Link>
       </header>
     </>
   );

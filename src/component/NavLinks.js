@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
 const NavLinks = () => {
+  const handleLinkClick = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav>
       <ul>
@@ -10,12 +15,20 @@ const NavLinks = () => {
           </Link>
         </li>
         <li>
-          <Link aria-label="Go to About page" to="/about">
+          <Link
+            aria-label="Go to About page"
+            to="/"
+            onClick={() => handleLinkClick("about")}
+          >
             About
           </Link>
         </li>
         <li>
-          <Link aria-label="Go to menu page" to="/menu">
+          <Link
+            aria-label="Go to menu page"
+            to="/"
+            onClick={() => handleLinkClick("menu")}
+          >
             Menu
           </Link>
         </li>
@@ -25,12 +38,12 @@ const NavLinks = () => {
           </Link>
         </li>
         <li>
-          <Link aria-label="Go to order page" to="/order">
+          <Link aria-label="Go to order page" to="/">
             Order Online
           </Link>
         </li>
         <li>
-          <Link aria-label="Go to login page" to="/login">
+          <Link aria-label="Go to login page" to="/">
             Login
           </Link>
         </li>

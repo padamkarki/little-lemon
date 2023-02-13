@@ -5,7 +5,7 @@ const BookingHeading = () => {
     <div className={styles.intro}>
       <div className={styles.textalign}>
         <h2 className={styles.heading}>Find your table for any occasion</h2>
-        <p>
+        <p className={styles.desc}>
           Reserve a table at our restaurant for a memorable dining experience.
           Enjoy great views and atmosphere. Book your table now via phone or
           website.Savor our delicious cuisine crafted by our expert chefs using

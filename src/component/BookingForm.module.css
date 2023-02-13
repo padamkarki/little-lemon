@@ -1,17 +1,11 @@
-.section {
-  padding-right: 20%;
-  padding-left: 20%;
-  padding-bottom: 2%;
-  font-size: 18pt;
-  background-color: #edefee;
-}
+/*--------------------------Booking Heading-----------------------------------------------------------------*/
 .intro {
   background-image: linear-gradient(#001a10, rgba(0, 0, 0, 0.5)),
     url("../images/restaurant.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0% 60%;
-  height: 300px;
+  height: auto;
   align-items: center;
   justify-content: center;
   color: white;
@@ -22,18 +16,55 @@
   padding-left: 20%;
   font-size: 18pt;
 }
+.heading {
+  padding-top: 1em;
+  text-align: center;
+  color: #f4ce14;
+}
+.desc {
+  margin: 0;
+  padding: 2vh;
+}
 
+@media (min-width: 701px) and (max-width: 1024px) {
+  .textalign {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+  .heading {
+    padding-top: 1em;
+    text-align: center;
+    color: #f4ce14;
+  }
+}
+@media (max-width: 700px) {
+  .textalign {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+  .heading {
+    padding: 0.5em 0;
+    text-align: center;
+    color: #f4ce14;
+  }
+  .desc {
+    display: none;
+  }
+}
+/*--------------------------Booking Form-------------------------------------------------------------------*/
+.section {
+  padding-right: 20%;
+  padding-left: 20%;
+  padding-bottom: 2%;
+  font-size: 18pt;
+  background-color: #edefee;
+}
 .form_container {
   padding-top: 2em;
   padding-bottom: 2em;
   content: "";
   display: table;
   clear: both;
-}
-.heading {
-  padding-top: 1em;
-  text-align: center;
-  color: #f4ce14;
 }
 
 label {
@@ -78,5 +109,16 @@ button {
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  height: 40px; /* increase the size of the arrows */
+  height: 40px;
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+  button {
+    width: 100%;
+    float: none;
+  }
 }

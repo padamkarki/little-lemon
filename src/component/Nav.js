@@ -36,7 +36,7 @@ const Nav = () => {
               <li>
                 <Link
                   aria-label="Go to About page"
-                  to="/about"
+                  to="/"
                   onClick={handleNavOpen}
                 >
                   About
@@ -45,7 +45,7 @@ const Nav = () => {
               <li>
                 <Link
                   aria-label="Go to menu page"
-                  to="/menu"
+                  to="/"
                   onClick={handleNavOpen}
                 >
                   Menu
@@ -63,7 +63,7 @@ const Nav = () => {
               <li>
                 <Link
                   aria-label="Go to order page"
-                  to="/order"
+                  to="/"
                   onClick={handleNavOpen}
                 >
                   Order Online
@@ -72,7 +72,7 @@ const Nav = () => {
               <li>
                 <Link
                   aria-label="Go to login page"
-                  to="/login"
+                  to="/"
                   onClick={handleNavOpen}
                 >
                   Login

@@ -95,7 +95,7 @@ const BookingForm = ({ availableTimes, dispatch, onSubmit }) => {
           <input
             className={styles.col_75}
             type="number"
-            placeholder="1"
+            placeholder="eg. 2"
             min="1"
             max="10"
             id="guests"
