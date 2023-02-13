@@ -9,13 +9,13 @@ const Home = () => {
       <div className="reservation">
         <Reservation />
       </div>
-      <div className="specials">
+      <div className="specials" id="menu">
         <Specials />
       </div>
       <div className="ratings">
         <Ratings />
       </div>
-      <div className="about">
+      <div className="about" id="about">
         <About />
       </div>
     </div>
