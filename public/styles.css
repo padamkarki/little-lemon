@@ -107,13 +107,12 @@ nav {
 nav ul {
   list-style-type: none;
   display: flex;
-  /* padding-left: 2%; */
 }
 @media (min-width: 861px) {
   nav ul li {
     font-weight: bold;
     font-size: 20px;
-    padding: 1em;
+    padding: 0 1em 0 1em;
     max-width: 100%;
   }
 }
@@ -121,7 +120,7 @@ nav ul {
   nav ul li {
     font-weight: bold;
     font-size: 18px;
-    padding: 0.5em;
+    padding: 0 0.5em 0 0.5em;
     max-width: 100%;
   }
 }
